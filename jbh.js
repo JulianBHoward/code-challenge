@@ -65,7 +65,7 @@ return largestProduct;
 const removeParenth = function(str) {
     var str = str.replace('(','');
    
-     var str = str.replace(')','');
+     str = str.replace(')','');
     
      return str;
    };
