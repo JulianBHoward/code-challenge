@@ -1,4 +1,4 @@
-const findSum =  function(arr) {
+const findSum =  function(array) {
     let sum = 0;
     for (let i = 0; i < arr.length; i++) {
         const element = arr[i];
@@ -34,7 +34,7 @@ const isPalindrome = function(str) {
 };
 
 
-const largestPair = function(numbers){
+const largestPair = function(array) {
     var numbers = [];
 var products = [];
 
@@ -58,7 +58,7 @@ return largestProduct;
 
 };
 
-const removeParenth = function(newString) {
+const removeParenth = function(str) {
     newString = newString.replace('(','');
     newString = newString.replace(')','');
     
