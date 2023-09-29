@@ -8,7 +8,7 @@ const findSum =  function(array) {
 
 };
 
-  const findFrequency = function (array) {
+  const findFrequency = function(array) {
     let count = {};
 
     array.forEach(function(item){
