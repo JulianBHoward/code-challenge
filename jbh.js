@@ -1,47 +1,51 @@
 const findSum =  function(array) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        const element = arr[i];
-        
+    var sum = 0;
+    for (var i = 0; i < array.length; i++) {
+        sum += array[i];
     }
     return sum;
+    };
 
-};
-
-  const findFrequency = function(array) {
-    let count = {};
-
-    array.forEach(function(item){
-        if (item.hasOwnProperty(item)){
-            count[item] += 1;
-        } else{
-            count[item]=1;
-        }
-
-        return ('most: ' + Math.max(count) + ' least: '+ Math.min(count));
-        
+  const findFrequency = function (array) {
+    const newArray = {};
+    let mostFrequent = array[0];
+    let leastFrequent = array[0];
+  
+    array.forEach((str) => {
+        newArray[str] = (newArray[str] || 0) + 1;
+  
+      if (newArray[str] > newArray[mostFrequent]) {
+        mostFrequent = str;
+      }
+  
+      if (newArray[str] < newArray[newArray]) {
+        newArray = str;
+      }
     });
+  
+    return { most: mostFrequent, least: leastFrequent };
    
 };
 const isPalindrome = function(str) {
-    var reverseString = str.split('').reverse().join('');
+    const array = str.split('');
+    const arrayReverse = array.reverse();
+    const reverse = arrayReverse.join('');
 
-    if str = reverseString{
-        return true;
-    } else {
-        return false;
+    if(str === reverse){
+        return true
+    } else{
+        return false
     }
 };
 
 
 const largestPair = function(array) {
-    var numbers = [];
-var products = [];
-
-for (var i=0; i < numbers.length; i++){
     
-    var currentNum = numbers[i];
-    var nextNum = numbers [i+1];
+    var products =[];
+for (var i = 0; i < array.length; i++){
+    
+    var currentNum = array[i];
+    var nextNum = array [i+1];
 
     var product = currentNum * nextNum;
     
@@ -59,18 +63,31 @@ return largestProduct;
 };
 
 const removeParenth = function(str) {
-    newString = newString.replace('(','');
-    newString = newString.replace(')','');
+    var str = str.replace('(','');
+   
+     var str = str.replace(')','');
     
-    return newString;
-  };
+     return str;
+   };
 
 const scoreScrabble = function(str) {
-    let letterValue = [a: 1, e: 1, i: 1, o: 1, u: 1, l: 1, n: 1, r: 1, s: 1, t: 1, d: 2, g: 2, b: 3, c: 3, m: 3, p: 3, f: 4, h: 4, v: 4, w: 4, y: 4, k: 5, j: 8, x: 8, q: 10, z: 10 ],
-    sum = 0; 
-var str = str.toLowerCase();
-for (i = 0; i < str.length; i++) {
-    sum += letterValue[str[i].toLowerCase] || 0; 
-}
-return sum;
+   
+    const scrabbleScores = {
+        a: 1, b: 3, c: 3, d: 2, e: 1, f: 4, g: 2, h: 4, i: 1, j: 8,
+        k: 5, l: 1, m: 3, n: 1, o: 1, p: 3, q: 10, r: 1, s: 1, t: 1,
+        u: 1, v: 4, w: 4, x: 8, y: 4, z: 10
+      };
+    
+      let sum = 0;
+      for (let i = 0; i < str.length; i++) {
+        const letter = str[i];
+        if (letter in scrabbleScores) {
+          sum += scrabbleScores[letter];
+        }
+      }
+    
+      return sum;
   };
+
+
+  
