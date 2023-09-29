@@ -63,11 +63,16 @@ return largestProduct;
 };
 
 const removeParenth = function(str) {
-    var str = str.replace('(','');
-   
-    str = str.replace(')','');
+    const openParenth = str.indexOf('(');
     
-     return str;
+    const closeParenth = str.indexOf(')');
+    
+    const originalString = str.slice(0, openParenth);
+    
+    const newString = str.slice(closeParenth + 1);
+    
+    
+    return originalString + newString;
    };
 
 const scoreScrabble = function(str) {
@@ -89,5 +94,3 @@ const scoreScrabble = function(str) {
       return sum;
   };
 
-
-  
