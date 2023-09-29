@@ -1,58 +1,41 @@
-const findSum = function(array) {
+const findSum =  function(arr) {
     let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        
+    }
+    return sum;
 
-    for (let i = 0; i < numbers.length; i++ ) {
-        sum += numbers[i];
-      }
-      
-    let average = sum/ numbers.length;
-
-    return average;
-
-  };
+};
 
   const findFrequency = function (array) {
-    if (!array || array.length === 0) {
-        return [null, null]; 
-    }
+    let count = {};
 
-    const frequencyMap = new Map();
-
-    array.map(item => {
-        const count = frequencyMap.get(item) || 0;
-        frequencyMap.set(item, count + 1);
-    });
-
-    let mostFrequentItem = null;
-    let leastFrequentItem = null;
-
-    
-    frequencyMap.forEach((count, item) => {
-        if (!mostFrequentItem || count > frequencyMap.get(mostFrequentItem)) {
-            mostFrequentItem = item;
+    array.forEach(function(item){
+        if (item.hasOwnProperty(item)){
+            count[item] += 1;
+        } else{
+            count[item]=1;
         }
-        if (!leastFrequentItem || count < frequencyMap.get(leastFrequentItem)) {
-            leastFrequentItem = item;
-        }
-    });
 
-    return [mostFrequentItem, leastFrequentItem];
+        return ('most: ' + Math.max(count) + ' least: '+ Math.min(count));
+        
+    });
+   
 };
-const isPalindrome = function (palindrome) {
-    for( var i = palindrome.length; i > 0; i-- )
-    {
-        if( palindrome[i] = palindrome.charAt(palindrome.length)-1 )
-        {
-            return true
-        }else{
-           return false
-        }
+const isPalindrome = function(str) {
+    var reverseString = str.split('').reverse().join('');
+
+    if str = reverseString{
+        return true;
+    } else {
+        return false;
     }
 };
-  
+
 
 const largestPair = function(numbers){
-    var numbers = [1, 3, 5, 8]
+    var numbers = [];
 var products = [];
 
 for (var i=0; i < numbers.length; i++){
@@ -68,26 +51,26 @@ for (var i=0; i < numbers.length; i++){
 
 
 }
-
+ 
 var largestProduct = Math.max (...products);
 
+return largestProduct;
 
 };
 
 const removeParenth = function(newString) {
-    let originalString = ('ido(not)liketocode');
-    newString = originalString.replace('(','');
+    newString = newString.replace('(','');
     newString = newString.replace(')','');
     
     return newString;
   };
 
-const scoreScrabble = function(scoreScrabble) {
-    let letterValue = { a: 1, e: 1, i: 1, o: 1, u: 1, l: 1, n: 1, r: 1, s: 1, t: 1, d: 2, g: 2, b: 3, c: 3, m: 3, p: 3, f: 4, h: 4, v: 4, w: 4, y: 4, k: 5, j: 8, x: 8, q: 10, z: 10 },
-
-word = word.toLowerCase();
-for (i = 0; i < word.length; i++) {
-    sum += letterValue[word[i].toLowerCase] || 0; 
+const scoreScrabble = function(str) {
+    let letterValue = [a: 1, e: 1, i: 1, o: 1, u: 1, l: 1, n: 1, r: 1, s: 1, t: 1, d: 2, g: 2, b: 3, c: 3, m: 3, p: 3, f: 4, h: 4, v: 4, w: 4, y: 4, k: 5, j: 8, x: 8, q: 10, z: 10 ],
+    sum = 0; 
+var str = str.toLowerCase();
+for (i = 0; i < str.length; i++) {
+    sum += letterValue[str[i].toLowerCase] || 0; 
 }
 return sum;
   };
