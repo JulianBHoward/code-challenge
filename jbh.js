@@ -6,26 +6,31 @@ const findSum =  function(array) {
     return sum;
     };
 
-  const findFrequency = function (array) {
-    const newArray = {};
-    let mostFrequent = array[0];
-    let leastFrequent = array[0];
-  
-    array.forEach((str) => {
-        newArray[str] = (newArray[str] || 0) + 1;
-  
-      if (newArray[str] > newArray[mostFrequent]) {
-        mostFrequent = str;
+    const findFrequency = function (array) {
+
+      if (array.length === 0) {
+        return { most: undefined, least: undefined };
       }
-  
-      if (newArray[str] < newArray[newArray]) {
-        newArray = str;
-      }
-    });
-  
-    return { most: mostFrequent, least: leastFrequent };
+    
+      const frequencyAnswer = {};
+      let mostFrequent = array[0];
+      let leastFrequent = array[0];
+    
+      array.forEach((str) => {
+        frequencyAnswer[str] = (frequencyAnswer[str] || 0) + 1;
+    
+        if (frequencyAnswer[str] > frequencyAnswer[mostFrequent]) {
+          mostFrequent = str;
+        }
+    
+        if (frequencyAnswer[str] < frequencyAnswer[leastFrequent]) {
+          leastFrequent = str;
+        }
+      });
+    
+      return { most: mostFrequent, least: leastFrequent };
+    };
    
-};
 const isPalindrome = function(str) {
     const array = str.split('');
     const arrayReverse = array.reverse();
@@ -93,4 +98,3 @@ const scoreScrabble = function(str) {
     
       return sum;
   };
-
